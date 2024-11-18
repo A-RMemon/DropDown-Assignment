@@ -1,0 +1,73 @@
+/* Reset basic styling for <select> */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    color: #333;
+    transition: all 0.3s ease;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Select container for layout */
+  .select-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+    margin: 30px auto;
+    max-width: 800px;
+  }
+  
+  /* Focus and hover states for select */
+  select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+  }
+  
+  select:hover {
+    border-color: #3498db;
+  }
+  
+  /* Styling the arrow on the select field */
+  select::-ms-expand {
+    display: none; /* Hide the default dropdown arrow in IE */
+  }
+  
+  select::after {
+    content: '\25BC'; /* Downward arrow */
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 18px;
+    color: #aaa;
+  }
+  
+  /* Styling the select when it's in a disabled state */
+  select:disabled {
+    background-color: #f1f1f1;
+    color: #888;
+    cursor: not-allowed;
+    border-color: #ddd;
+  }
+  
+  /* Styling the placeholder option */
+  option:disabled {
+    color: #888;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .select-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
